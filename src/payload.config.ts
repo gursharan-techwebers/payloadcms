@@ -27,6 +27,8 @@ export default buildConfig({
     'http://localhost:3001',
   ],
 
+  maxDepth: 3,
+
   graphQL: {
     disable: true,
   },

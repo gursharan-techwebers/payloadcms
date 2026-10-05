@@ -98,3 +98,14 @@
 //     }
 //   }
 // }
+
+
+
+
+// securiy on cloudflare
+
+// Then create one rate-limiting rule for the Payload API.
+// Rule
+// Target:
+// cms.yourdomain.com/api/*
+// 20 requests / 10 seconds / IP

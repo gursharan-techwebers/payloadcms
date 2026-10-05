@@ -1,9 +1,8 @@
-// src/collections/Media.ts
-
 import type { CollectionConfig } from 'payload'
+import { slugField } from 'payload'
 
-export const Media: CollectionConfig = {
-  slug: 'media',
+export const Categories: CollectionConfig = {
+  slug: 'categories',
 
   access: {
     read: ({ req }) => {
@@ -23,28 +22,24 @@ export const Media: CollectionConfig = {
     },
   },
 
-  upload: {
-    imageSizes: [
-      {
-        name: 'thumbnail',
-        width: 400,
-        height: 300,
-        position: 'centre',
-      },
-      {
-        name: 'medium',
-        width: 800,
-        height: 600,
-        position: 'centre',
-      },
-    ],
+  admin: {
+    useAsTitle: 'name',
   },
 
   fields: [
     {
-      name: 'alt',
+      name: 'name',
       type: 'text',
       required: true,
+    },
+
+    slugField({
+      fieldToUse: 'name',
+    }),
+
+    {
+      name: 'description',
+      type: 'textarea',
     },
   ],
 }

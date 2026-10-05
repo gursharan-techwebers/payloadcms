@@ -26,6 +26,11 @@ export default buildConfig({
     // Add your frontend URL here
     'http://localhost:3001',
   ],
+
+  graphQL: {
+    disable: true,
+  },
+
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

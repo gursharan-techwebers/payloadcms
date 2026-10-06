@@ -170,18 +170,32 @@ export const Blogs: CollectionConfig = {
 
     {
       name: 'seo',
+      label: 'SEO',
       type: 'group',
       fields: [
         {
           name: 'metaTitle',
           type: 'text',
+          admin: {
+            components: {
+              Field: '@/components/SeoTitleField',
+            },
+          },
         },
+
         {
           name: 'metaDescription',
           type: 'textarea',
+          admin: {
+            components: {
+              Field: '@/components/SeoDescriptionField',
+            },
+          },
         },
+
         {
           name: 'ogImage',
+          label: 'OG Image',
           type: 'upload',
           relationTo: 'media',
         },
